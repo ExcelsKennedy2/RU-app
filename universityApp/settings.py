@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'pwa',
+    # 'pwa',
 ]
 
 MIDDLEWARE = [
@@ -129,22 +129,22 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PWA_APP_NAME = 'RU'
-PWA_APP_DESCRIPTION = "Rongo University App"
-PWA_APP_THEME_COLOR = '#0a0a0a'
-PWA_APP_BACKGROUND_COLOR = '#ffffff'
-PWA_APP_DISPLAY = 'standalone'
-PWA_APP_SCOPE = '/'
-PWA_APP_START_URL = '/'
-PWA_APP_ICONS = [
-    {
-        'src': '/static/icons/icon-1.png',
-        'sizes': '192x192'
-    },
-    {
-        'src': '/static/icons/icon-2.jpg',
-        'sizes': '512x512'
-    }
-]
-PWA_APP_DIR = 'ltr'
-PWA_APP_LANG = 'en-US'
+# PWA_APP_NAME = 'RU'
+# PWA_APP_DESCRIPTION = "Rongo University App"
+# PWA_APP_THEME_COLOR = '#0a0a0a'
+# PWA_APP_BACKGROUND_COLOR = '#ffffff'
+# PWA_APP_DISPLAY = 'standalone'
+# PWA_APP_SCOPE = '/'
+# PWA_APP_START_URL = '/'
+# PWA_APP_ICONS = [
+#     {
+#         'src': '/static/icons/icon-1.png',
+#         'sizes': '192x192'
+#     },
+#     {
+#         'src': '/static/icons/icon-2.jpg',
+#         'sizes': '512x512'
+#     }
+# ]
+# PWA_APP_DIR = 'ltr'
+# PWA_APP_LANG = 'en-US'
