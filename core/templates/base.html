@@ -1,0 +1,21 @@
+{% load static %}
+{% load pwa %}
+{% progressive_web_app_meta %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}|RU app</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png'}" type="image/x-icon">
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    <!-- Bootstrap JS Bundle (includes Popper.js) -->
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
