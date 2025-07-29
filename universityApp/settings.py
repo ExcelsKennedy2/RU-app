@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'pwa',
+    'accounts',
+    'dashboards',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +152,8 @@ PWA_APP_ICONS = [
 ]
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
+
+
+LOGIN_REDIRECT_URL = '/redirect/'
+LOGOUT_REDIRECT_URL = '/login/'
+AUTH_USER_MODEL = 'accounts.User'
