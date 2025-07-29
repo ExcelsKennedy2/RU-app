@@ -15,11 +15,11 @@
 <body>
     {% block content %}
     {% endblock %}
-    <button id="installBtn" hidden>Install App</button>
+    <!-- <button id="installBtn" hidden>Install App</button> -->
     <!-- Bootstrap JS Bundle (includes Popper.js) -->
     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
     
-<script>
+<!-- <script>
   let deferredPrompt;
 
   window.addEventListener('beforeinstallprompt', e => {
@@ -40,7 +40,7 @@
   window.addEventListener('appinstalled', () => {
     console.log('PWA installed');
   });
-</script>
+</script> -->
 
 </body>
 </html>
