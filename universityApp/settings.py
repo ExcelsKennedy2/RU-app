@@ -139,11 +139,13 @@ PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
     {
         'src': '/static/icons/icon-1.png',
-        'sizes': '192x192'
+        'sizes': '192x192',
+        'type': 'image/png'
     },
     {
         'src': '/static/icons/icon-2.png',
-        'sizes': '512x512'
+        'sizes': '512x512',
+        'type': 'image/png'
     }
 ]
 PWA_APP_DIR = 'ltr'
