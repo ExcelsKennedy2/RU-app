@@ -129,8 +129,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PWA_APP_NAME = 'My Portfolio'
-PWA_APP_DESCRIPTION = 'A simple portfolio'
+PWA_APP_NAME = 'RU'
+PWA_APP_DESCRIPTION = 'Rongo University App'
 PWA_APP_THEME_COLOR = '#000000'
 PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_DISPLAY = 'standalone'
@@ -142,7 +142,7 @@ PWA_APP_ICONS = [
         'sizes': '192x192'
     },
     {
-        'src': '/static/icons/icon-2.jpg',
+        'src': '/static/icons/icon-2.png',
         'sizes': '512x512'
     }
 ]
