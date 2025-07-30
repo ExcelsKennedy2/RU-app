@@ -141,7 +141,7 @@ PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
     {
         'src': '/static/icons/icon-1.png',
-        'sizes': '100x100',
+        'sizes': '192x192',
         'type': 'image/png'
     },
     {
