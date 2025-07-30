@@ -7,62 +7,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0d6efd">
-
     <title>{% block title %}{% endblock %}|RU app</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
-    <style>
-        #installBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #0d6efd;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  z-index: 9999;
-}
-
-    </style>
 </head>
 <body>
     {% block content %}
     {% endblock %}
-    <button id="installBtn" style="display: none;">Install App</button>
 
     <!-- Bootstrap JS Bundle (includes Popper.js) -->
     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-    
-<script>
-let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  console.log('beforeinstallprompt fired');
-  e.preventDefault();              
-  deferredPrompt = e;
-  installBtn.style.display = 'block';
-});
-
-installBtn.addEventListener('click', async () => {
-  installBtn.style.display = 'none';
-  deferredPrompt.prompt();
-
-  const { outcome } = await deferredPrompt.userChoice;
-  console.log(`User response to install prompt: ${outcome}`);
-
-  deferredPrompt = null;
-});
-
-window.addEventListener('appinstalled', () => {
-  console.log('PWA installed');
-});
-
-</script>
-
-
 </body>
 </html>
