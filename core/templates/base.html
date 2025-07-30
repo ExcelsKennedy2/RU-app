@@ -34,29 +34,30 @@
     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
     
 <script>
-  let deferredPrompt;
-  const installBtn = document.getElementById('installBtn');
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
 
-  window.addEventListener('beforeinstallprompt', (e) => {
-    console.log('beforeinstallprompt fired');
-    e.preventDefault();              
-    deferredPrompt = e;
-    installBtn.hidden = false;
-  });
+window.addEventListener('beforeinstallprompt', (e) => {
+  console.log('beforeinstallprompt fired');
+  e.preventDefault();              
+  deferredPrompt = e;
+  installBtn.style.display = 'block';
+});
 
-  installBtn.addEventListener('click', async () => {
-    installBtn.hidden = true;
-    deferredPrompt.prompt();
+installBtn.addEventListener('click', async () => {
+  installBtn.style.display = 'none';
+  deferredPrompt.prompt();
 
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(`User response to install prompt: ${outcome}`);
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log(`User response to install prompt: ${outcome}`);
 
-    deferredPrompt = null;
-  });
+  deferredPrompt = null;
+});
 
-  window.addEventListener('appinstalled', () => {
-    console.log('PWA installed');
-  });
+window.addEventListener('appinstalled', () => {
+  console.log('PWA installed');
+});
+
 </script>
 
 
