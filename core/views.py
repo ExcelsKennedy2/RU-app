@@ -1,16 +1,14 @@
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
+from .forms import StudentRegisterForm, LecturerRegisterForm
 # Create your views here.
 def base(request):
     return render(request, 'base.html')
 
 def home(request):
     return render(request, 'home.html')
-
-from django.shortcuts import render, redirect
-from django.contrib.auth import views as auth_views
-from django.contrib.auth.decorators import login_required
-from .forms import StudentRegisterForm, LecturerRegisterForm
 
 # Registration Views
 def student_register(request):
