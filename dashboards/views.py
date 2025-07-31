@@ -14,6 +14,10 @@ def student_dashboard(request):
         student = StudentProfile.objects.get(user=user)
     except StudentProfile.DoesNotExist:
         return redirect('home')
+    
+    print("🧪 Student:", student)
+    print("🧪 Admission Year:", student.admission_year)
+    print("🧪 Year of Study (computed):", student.year_of_study)
 
     # Get current academic year and semester
     try:
@@ -22,6 +26,9 @@ def student_dashboard(request):
     except (AcademicYear.DoesNotExist, Semester.DoesNotExist):
         current_year = None
         current_semester = None
+
+    print("🧪 Current Year:", current_year)
+    print("🧪 Current Semester:", current_semester)
 
     year_of_study = student.year_of_study
 
