@@ -2,11 +2,13 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from accounts.models import User, StudentProfile, LecturerProfile
 from academics.models import Program, Semester 
+from academics.models import Program, Semester, AcademicYear
 
 class StudentRegisterForm(UserCreationForm):
     admission_number = forms.CharField()
     program = forms.ModelChoiceField(queryset=Program.objects.all())
     semester = forms.ModelChoiceField(queryset=Semester.objects.all())
+    admission_year = forms.ModelChoiceField(queryset=AcademicYear.objects.all())
 
     class Meta:
         model = User
@@ -22,6 +24,7 @@ class StudentRegisterForm(UserCreationForm):
                 admission_number=self.cleaned_data['admission_number'],
                 program=self.cleaned_data['program'],
                 semester=self.cleaned_data['semester'],
+                admission_year=self.cleaned_data['admission_year'],
             )
         return user
 
